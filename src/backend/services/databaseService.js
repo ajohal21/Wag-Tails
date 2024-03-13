@@ -15,8 +15,12 @@ const dbConfig = {
   database: process.env.DATABASE,
 };
 
+console.log(dbConfig);
+
 // Create a new PostgreSQL client
 const pool = new Pool(dbConfig);
+
+
 
 (async () => {
   try {
