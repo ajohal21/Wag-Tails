@@ -1,6 +1,9 @@
 
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from "../../firebase.js";
+import { useNavigate } from 'react-router-dom';
+
+
 
 
 
@@ -25,7 +28,13 @@ const signUpWithEmailAndPassword = async (event) => {
 
 
 
-export default function registerForm() {
+export default function RegisterForm() {
+  
+const navigate = useNavigate();
+
+const handleRegister = () => {
+  navigate('/login');
+};
     return (
       <>
         <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
@@ -93,6 +102,7 @@ export default function registerForm() {
               <div>
                 <button
                   type="submit"
+                  onClick={handleRegister}
                   className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
                   Register
